@@ -3,8 +3,7 @@
 A front-end-only gym website with a bold, animation-heavy design: smooth scrolling, a page loader, scroll-driven
 animations and a full set of pages. No backend and no database.
 
-KINETIK is a made-up brand. The layout and motion are inspired by [phive.pt](https://phive.pt); the brand, copy,
-logo and code are original, and no assets or text from that site are used.
+KINETIK is a made-up brand. The brand, copy, logo and code are all original.
 
 ## Pages
 

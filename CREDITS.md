@@ -6,5 +6,3 @@ KINETIK is a demo project. The brand name, logo and copy are original.
 - **Hero video** (`public/videos/hero.mp4`) comes from [Pexels](https://www.pexels.com) and is used under the Pexels License.
 - **Fonts:** Anton and Space Grotesk, loaded through `next/font/google` (SIL Open Font License).
 - **Animation:** GSAP (ScrollTrigger, SplitText, Draggable, Inertia) and Lenis.
-
-Layout and motion are inspired by https://phive.pt. No assets or text from that site are used.

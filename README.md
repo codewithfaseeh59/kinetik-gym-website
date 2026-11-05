@@ -42,7 +42,17 @@ npm run build    # static export to ./out
 npx serve out    # preview the exported site
 ```
 
-Requires Node.js 20 or newer.
+Requires Node.js 20.9 or newer.
+
+## Deploying to Vercel
+
+The project is a static export (`output: "export"`), so Vercel needs no configuration:
+
+1. Push the repo to GitHub.
+2. In Vercel, choose **Add New → Project** and import the repo.
+3. Leave the framework preset as **Next.js**, with no environment variables, and click **Deploy**.
+
+`vercel.json` only adds cache headers for the images and the video. Every push to `main` redeploys automatically.
 
 ## Project structure
 

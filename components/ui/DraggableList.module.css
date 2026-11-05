@@ -1,0 +1,50 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  padding-inline: var(--gutter);
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.wrap[data-dragging="true"] {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+  gap: clamp(12px, 1.6vw, 24px);
+  width: max-content;
+  padding-right: var(--gutter);
+  touch-action: pan-y;
+}
+
+.track img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: -2.75rem 0 0 -2.75rem;
+  border-radius: 50%;
+  background: var(--c-yellow);
+  color: var(--c-dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}

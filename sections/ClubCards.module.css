@@ -1,0 +1,80 @@
+.section {
+  display: grid;
+  gap: clamp(60px, 9vw, 140px);
+  padding: var(--section-y) var(--gutter);
+  background: var(--c-dark);
+  color: var(--c-warm-grey);
+}
+
+.club {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(24px, 4vw, 70px);
+  align-items: center;
+}
+
+.flip .media {
+  order: 2;
+}
+
+.media {
+  aspect-ratio: 4 / 3.2;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.info {
+  display: grid;
+  justify-items: start;
+  gap: 1.3rem;
+}
+
+.chip {
+  padding: 0.35rem 1rem;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.name {
+  font-size: clamp(3.4rem, 8vw, 8.5rem);
+  color: var(--c-yellow);
+}
+
+.tag {
+  max-width: 24ch;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.perks li {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: var(--c-light-brown);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 900px) {
+  .club {
+    grid-template-columns: 1fr;
+  }
+
+  .flip .media {
+    order: 0;
+  }
+}

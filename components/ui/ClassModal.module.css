@@ -1,0 +1,139 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(22, 16, 3, 0.72);
+  backdrop-filter: blur(6px);
+  overflow-y: auto;
+}
+
+.panel {
+  --bg: var(--c-yellow);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  width: min(1000px, 100%);
+  border-radius: 28px;
+  background: var(--bg);
+  color: var(--c-dark);
+  overflow: hidden;
+}
+
+.panel[data-tone="pilates"] {
+  --bg: var(--c-pilates);
+}
+
+.panel[data-tone="nutrition"] {
+  --bg: var(--c-nutrition);
+}
+
+.panel[data-tone="stream"] {
+  --bg: var(--c-stream);
+}
+
+.photo {
+  position: relative;
+  min-height: 320px;
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.body {
+  display: grid;
+  align-content: center;
+  gap: 1.2rem;
+  padding: clamp(24px, 4vw, 52px);
+}
+
+.chip {
+  justify-self: start;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: var(--c-dark);
+  color: var(--c-warm-grey);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(3rem, 6vw, 5.4rem);
+}
+
+.desc {
+  max-width: 36ch;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.facts {
+  display: flex;
+  gap: 2.4rem;
+  margin: 0;
+}
+
+.facts dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+.facts dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--c-dark);
+  transition: transform 0.4s var(--ease);
+}
+
+.close:hover {
+  transform: rotate(90deg);
+}
+
+.close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.1rem;
+  height: 2px;
+  background: var(--c-yellow);
+  border-radius: 2px;
+}
+
+.close span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (max-width: 800px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    min-height: 220px;
+  }
+}

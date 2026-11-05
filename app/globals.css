@@ -1,40 +1,72 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* palette */
+  --c-black: #000;
+  --c-dark: #161003;
+  --c-mid: #211e16;
+  --c-light-brown: #3c3627;
+  --c-yellow: #ffe000;
+  --c-warm-yellow: #ffd904;
+  --c-soft-yellow: #f6c548;
+  --c-light-yellow: #fff4a6;
+  --c-warm-grey: #f3efd7;
+  --c-white: #fff;
+  --c-pilates: #f7bbce;
+  --c-nutrition: #d9f7bb;
+  --c-stream: #b76eff;
+  --c-red: #ff004d;
+
+  /* motion */
+  --ease: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration: 0.25s;
+
+  /* layout */
+  --gutter: clamp(16px, 3vw, 44px);
+  --section-y: clamp(80px, 12vw, 180px);
+
+  /* type */
+  --font-display: var(--font-anton), "Arial Narrow", Impact, sans-serif;
+  --font-body: var(--font-space), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  background: var(--c-dark);
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--c-dark);
+  color: var(--c-warm-grey);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure {
   margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
 }
 
 a {
@@ -42,8 +74,83 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--c-yellow);
+  color: var(--c-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-stream);
+  outline-offset: 3px;
+}
+
+/* shared type helpers */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: -0.005em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page-in {
+  animation: page-in 0.6s var(--ease-out) both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-in {
+    animation: none;
+  }
+}
+
+/* split-text elements stay hidden until JS has prepared them */
+[data-split] {
+  visibility: hidden;
+}
+
+.split-line {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-split] {
+    visibility: visible;
   }
 }

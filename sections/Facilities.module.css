@@ -1,0 +1,129 @@
+.section {
+  position: relative;
+  padding: var(--section-y) var(--gutter);
+  background: var(--c-dark);
+  color: var(--c-warm-grey);
+}
+
+.heading {
+  max-width: 12ch;
+  margin-bottom: clamp(40px, 6vw, 90px);
+  font-size: clamp(3rem, 8vw, 8.5rem);
+  color: var(--c-yellow);
+}
+
+.list {
+  display: grid;
+}
+
+.row {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1.5px;
+  background: rgba(243, 239, 215, 0.3);
+  transform-origin: left center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 40px);
+  padding: clamp(18px, 2.6vw, 36px) 0;
+  transition: padding 0.6s var(--ease), color 0.3s;
+}
+
+.idx {
+  min-width: 2.2rem;
+  font-size: 0.95rem;
+  opacity: 0.55;
+}
+
+.name {
+  flex: 1;
+  font-size: clamp(2.1rem, 5.6vw, 5.8rem);
+  transition: transform 0.6s var(--ease), color 0.3s;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: clamp(2.6rem, 4vw, 3.6rem);
+  aspect-ratio: 1;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.4s, transform 0.5s var(--ease), background 0.3s, color 0.3s;
+}
+
+.arrow svg {
+  width: 45%;
+}
+
+.row:hover .name,
+.row:focus-within .name {
+  transform: translateX(clamp(8px, 1.6vw, 26px));
+  color: var(--c-yellow);
+}
+
+.row:hover .arrow,
+.row:focus-within .arrow {
+  opacity: 1;
+  transform: none;
+}
+
+/* inline thumbnail replaces the cursor preview on touch devices */
+.thumb {
+  display: none;
+  position: relative;
+  flex: none;
+  width: 64px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.thumb img {
+  object-fit: cover;
+}
+
+.preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: clamp(260px, 26vw, 400px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 20px;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.previewImg {
+  position: absolute;
+  inset: 0;
+}
+
+.previewImg img {
+  object-fit: cover;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .preview {
+    display: none;
+  }
+
+  .thumb {
+    display: block;
+  }
+
+  .arrow {
+    display: none;
+  }
+}

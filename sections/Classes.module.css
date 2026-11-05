@@ -1,0 +1,36 @@
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+  background: var(--c-mid);
+  color: var(--c-warm-grey);
+  overflow: hidden;
+}
+
+.title {
+  color: var(--c-yellow);
+  --rolling-size: clamp(7rem, 24vw, 26rem);
+  margin-bottom: clamp(30px, 5vw, 70px);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  padding-inline: var(--gutter);
+  margin-bottom: clamp(36px, 5vw, 70px);
+}
+
+.lead {
+  max-width: 34ch;
+  font-size: clamp(1.4rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}

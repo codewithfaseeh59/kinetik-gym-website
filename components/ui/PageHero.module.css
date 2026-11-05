@@ -1,0 +1,83 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 44px);
+  min-height: min(82svh, 860px);
+  padding: 8.5rem var(--gutter) clamp(36px, 5vw, 70px);
+  overflow: hidden;
+}
+
+.compact {
+  min-height: min(48svh, 460px);
+}
+
+.compact .title {
+  font-size: clamp(4rem, 14vw, 13rem);
+}
+
+.dark {
+  background: var(--c-dark);
+  color: var(--c-warm-grey);
+}
+
+.dark .title {
+  color: var(--c-yellow);
+}
+
+.yellow {
+  background: var(--c-yellow);
+  color: var(--c-dark);
+}
+
+.light {
+  background: var(--c-warm-grey);
+  color: var(--c-dark);
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 2rem;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 500;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+.sub {
+  max-width: 28ch;
+}
+
+.title {
+  margin-top: auto;
+  font-size: clamp(4.6rem, 18vw, 20rem);
+  line-height: 0.85;
+  overflow-wrap: anywhere;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
+
+.statement {
+  max-width: 34ch;
+  font-size: clamp(1.3rem, 2.4vw, 2.3rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}

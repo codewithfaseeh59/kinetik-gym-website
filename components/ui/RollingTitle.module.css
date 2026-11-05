@@ -1,0 +1,45 @@
+.root {
+  overflow: hidden;
+  width: 100%;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.95;
+  font-size: var(--rolling-size, clamp(5rem, 17vw, 18rem));
+  user-select: none;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.group {
+  display: flex;
+  flex: none;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding-right: 0.3em;
+  white-space: nowrap;
+}
+
+.text {
+  display: block;
+  padding-top: 0.06em;
+}
+
+.star {
+  flex: none;
+  width: 0.5em;
+  height: 0.5em;
+  color: var(--star-color, var(--c-yellow));
+}
+
+.outline .text {
+  color: transparent;
+  -webkit-text-stroke: 3px var(--stroke-color, var(--c-yellow));
+}

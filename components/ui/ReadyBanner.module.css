@@ -1,0 +1,38 @@
+.banner {
+  --rolling-size: clamp(6rem, 20vw, 22rem);
+  display: grid;
+  gap: clamp(24px, 3vw, 44px);
+  padding-block: var(--section-y) clamp(40px, 6vw, 90px);
+  overflow: hidden;
+}
+
+.yellow {
+  background: var(--c-yellow);
+  color: var(--c-dark);
+  --star-color: var(--c-dark);
+}
+
+.dark {
+  background: var(--c-dark);
+  color: var(--c-yellow);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem 2rem;
+  padding-inline: var(--gutter);
+}
+
+.sub {
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}

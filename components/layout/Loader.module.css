@@ -1,0 +1,98 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(18px, 2.6vw, 36px) var(--gutter);
+  background: var(--c-yellow);
+  color: var(--c-dark);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 28px);
+}
+
+.mark {
+  flex: none;
+  width: clamp(3.2rem, 11vw, 9rem);
+  height: clamp(3.2rem, 11vw, 9rem);
+}
+
+.wordWrap {
+  overflow: hidden;
+  padding-top: 0.06em;
+}
+
+.word {
+  display: block;
+  font-size: clamp(4.2rem, 16vw, 17rem);
+  line-height: 0.9;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  overflow: hidden;
+  padding-top: 0.5rem;
+}
+
+.tag {
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.count {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.15em;
+  font-size: clamp(4rem, 12vw, 11rem);
+  line-height: 0.85;
+  font-variant-numeric: tabular-nums;
+}
+
+.count small {
+  margin-top: 0.12em;
+  font-size: 0.32em;
+}
+
+.track {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 6px;
+  background: rgba(22, 16, 3, 0.15);
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--c-dark);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@media (max-width: 600px) {
+  .center {
+    flex-direction: column;
+  }
+}

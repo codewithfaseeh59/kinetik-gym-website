@@ -1,0 +1,119 @@
+.block {
+  --bg: var(--c-yellow);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(28px, 5vw, 90px);
+  align-items: start;
+  padding: var(--section-y) var(--gutter);
+  background: var(--bg);
+  color: var(--c-dark);
+}
+
+.block[data-tone="pilates"] {
+  --bg: var(--c-pilates);
+}
+
+.block[data-tone="nutrition"] {
+  --bg: var(--c-nutrition);
+}
+
+.block[data-tone="stream"] {
+  --bg: var(--c-stream);
+}
+
+/* the title column stays in view while the cards scroll past */
+.left {
+  position: sticky;
+  top: 6.5rem;
+  display: grid;
+  justify-items: start;
+  gap: 1.4rem;
+}
+
+.num {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.name {
+  display: grid;
+  font-size: clamp(5.5rem, 15vw, 16rem);
+  line-height: 0.82;
+}
+
+.brand {
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  letter-spacing: 0.3em;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+.intro {
+  max-width: 32ch;
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.closing {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  text-transform: uppercase;
+}
+
+.right {
+  display: grid;
+  gap: clamp(12px, 1.6vw, 22px);
+}
+
+.photo {
+  aspect-ratio: 16 / 10;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.features {
+  display: grid;
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.feature {
+  display: grid;
+  gap: 0.5rem;
+  padding: clamp(20px, 2.4vw, 34px);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.55);
+  transition: background 0.4s var(--ease), transform 0.6s var(--ease);
+}
+
+.feature:hover {
+  background: var(--c-dark);
+  color: var(--c-warm-grey);
+  transform: translateX(-8px);
+}
+
+.fnum {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.ftitle {
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+}
+
+.feature p {
+  max-width: 44ch;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .block {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    position: static;
+  }
+}

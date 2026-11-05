@@ -1,0 +1,76 @@
+.section {
+  padding: clamp(40px, 6vw, 80px) var(--gutter) var(--section-y);
+  background: var(--c-warm-grey);
+  color: var(--c-dark);
+  min-height: 60svh;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.6rem;
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+
+.label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  --chip: var(--c-yellow);
+  padding: 0.55rem 1.3rem;
+  border: 1.5px solid var(--c-dark);
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.4s var(--ease);
+}
+
+.chip[data-tone="pilates"] {
+  --chip: var(--c-pilates);
+}
+
+.chip[data-tone="nutrition"] {
+  --chip: var(--c-nutrition);
+}
+
+.chip[data-tone="stream"] {
+  --chip: var(--c-stream);
+}
+
+.chip:hover {
+  background: var(--chip);
+  transform: translateY(-2px);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--c-dark);
+  border-color: var(--c-dark);
+  color: var(--chip);
+}
+
+.count {
+  margin-left: auto;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: clamp(12px, 1.6vw, 24px);
+}
+
+.grid > .card {
+  width: auto;
+}
